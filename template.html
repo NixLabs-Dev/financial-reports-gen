@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>COMPANY_PLACEHOLDER DATE_PLACEHOLDER Financial Report</title>
+        <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1>COMPANY_PLACEHOLDER Financial Report</h1>
+        <h2>DATE_PLACEHOLDER</h2>
+        <br>
+        <div class="grid-container">
+            <div class="quick-glance">
+                <h1>Quick glance</h1>
+                <p>Revenue: REVENUE_PLACEHOLDER$</p>
+                <p>Expenses: EXPENSES_PLACEHOLDER$</p>
+                <p>Balance: BALANCE_PLACEHOLDER$</p>
+            </div>
+        
+            <div class="graphs">
+                <h1>Graphs</h1>
+                <h2>Balance</h2>
+                <div id="balance-chart"></div>
+                <h2>Bills</h2>
+                <div id="bills-chart"></div>
+            </div>
+        </div>
+    </body>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: "Noto Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            font-variation-settings: "wdth" 100;
+            padding-left: 2%;
+            padding-top: 2%
+        }
+        .grid-container {
+            display: inline-grid;
+        }
+    </style>
+    <script>
+        var balance_data = [{
+            values: [REVENUE_PLACEHOLDER, EXPENSES_PLACEHOLDER, BALANCE_PLACEHOLDER],
+            labels: ['Revenue', 'Expenses', 'Balance'],
+            type: 'pie',
+            textinfo: 'value',
+            texttemplate: ' %{value} $'
+        }];
+
+        var layout = {
+          height: 700,
+          width: 1000
+        };
+
+        Plotly.newPlot('balance-chart', balance_data, layout);
+
+
+
+        var data = [{
+          values: BILLS_GRAPH_DATA_PLACEHOLDER,
+          labels: BILLS_GRAPH_LABELS_PLACEHOLDER,
+          type: 'pie'
+        }];
+
+        var layout = {
+          height: 700,
+          width: 1000
+        };
+
+        Plotly.newPlot('bills-chart', data, layout);
+
+    </script>
+</html>
